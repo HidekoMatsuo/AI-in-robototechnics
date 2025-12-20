@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Джерела — ШІ у робототехніці</title>
+
+<!-- 8-bit font -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+:root {
+--green: #2aff7c;
+--dark-green: #0f9d4e;
+--bg: #0a0a0a;
+--card: #131313;
+font-family: 'Press Start 2P', monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+margin: 0;
+background: var(--bg);
+color: #c4ffd2;
+overflow-x: hidden;
+}
+
+/* === ФОН === */
+#bg {
+position: fixed;
+inset: 0;
+background: url("https://jsac.jpcert.or.jp/archive/2024/images/screen.png") center/cover no-repeat;
+filter: hue-rotate(310deg) saturate(1.2);
+opacity: 0.8;
+z-index: -3;
+}
+
+/* === SCANLINES (CRT EFFECT) === */
+#scanlines {
+position: fixed;
+inset: 0;
+background:
+repeating-linear-gradient(
+to bottom,
+rgba(0, 0, 0, 0.25) 0px,
+rgba(0, 0, 0, 0.25) 8px,
+rgba(0, 0, 0, 0.12) 10px,
+rgba(0, 0, 0, 0.12) 22px
+);
+pointer-events: none;
+z-index: -1;
+animation: scanMove 6s linear infinite;
+mix-blend-mode: overlay;
+}
+
+@keyframes scanMove {
+from { background-position: 0 0; }
+to { background-position: 0 200px; }
+}
+
+/* === STARS === */
+#stars {
+position: fixed;
+inset: 0;
+z-index: -2;
+pointer-events: none;
+}
+
+.star {
+position: absolute;
+width: 2px;
+height: 2px;
+background: #fff;
+opacity: 0.8;
+animation: float 12s linear infinite;
+}
+
+@keyframes float {
+from { transform: translateY(0); }
+to { transform: translateY(-200px); }
+}
+
+.wrap {
+max-width: 1000px;
+margin: 40px auto;
+padding: 24px;
+}
+
+header {
+display: flex;
+gap: 24px;
+align-items: center;
+margin-bottom: 30px;
+animation: drop 1s ease;
+}
+
+@keyframes drop {
+from { opacity:0; transform: translateY(-20px); }
+to { opacity:1; transform: translateY(0); }
+}
+
+.logo {
+width: 64px;
+height: 64px;
+background: var(--green);
+color: #000;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 4px solid var(--dark-green);
+box-shadow: 0 0 10px var(--green);
+}
+
+h1, h2 {
+color: #afffce;
+text-shadow: 0 0 4px var(--green);
+}
+
+.card {
+background: var(--card);
+border: 3px solid #1f1f1f;
+padding: 18px;
+margin-bottom: 18px;
+box-shadow: 0 0 10px #2aff7c55;
+}
+
+ul {
+list-style: none;
+padding-left: 0;
+}
+
+li {
+margin-bottom: 14px;
+font-size: 12px;
+line-height: 1.8;
+}
+
+a.source {
+color: var(--green);
+text-decoration: none;
+border-bottom: 2px dashed var(--dark-green);
+}
+
+a.source:hover {
+text-shadow: 0 0 6px var(--green);
+}
+
+.btn-back {
+display: inline-block;
+margin-top: 20px;
+padding: 10px 14px;
+background: var(--green);
+color: #000;
+text-decoration: none;
+border: 3px solid var(--dark-green);
+transition: 0.1s;
+}
+
+.btn-back:hover {
+transform: translateY(-3px);
+box-shadow: 0 0 8px var(--green);
+}
+
+footer {
+margin-top: 40px;
+border-top: 3px solid var(--green);
+padding-top: 14px;
+font-size: 11px;
+color: var(--green);
+display: flex;
+justify-content: space-between;
+}
+</style>
+</head>
+
+<body>
+
+<div id="bg"></div>
+<div id="stars"></div>
+<div id="scanlines"></div>
+
+<div class="wrap">
+
+<header>
+<div class="logo">AI</div>
+<div>
+<h1>Джерела інформації</h1>
+<p>Матеріали для сайту про ШІ у робототехніці</p>
+</div>
+</header>
+
+<section class="card">
+<h2>Основи ШІ</h2>
+<ul>
+<li>
+<strong>IBM — Artificial Intelligence</strong><br>
+<a class="source" href="https://www.ibm.com/topics/artificial-intelligence" target="_blank">
+ibm.com/topics/artificial-intelligence
+</a>
+</li>
+<li>
+<strong>Stanford AI Lab</strong><br>
+<a class="source" href="https://ai.stanford.edu" target="_blank">
+ai.stanford.edu
+</a>
+</li>
+<li>
+<strong>MIT OpenCourseWare</strong><br>
+<a class="source" href="https://ocw.mit.edu" target="_blank">
+ocw.mit.edu
+</a>
+</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>Робототехніка</h2>
+<ul>
+<li>
+<strong>IEEE Robotics</strong><br>
+<a class="source" href="https://www.ieee-ras.org" target="_blank">
+ieee-ras.org
+</a>
+</li>
+<li>
+<strong>ROS</strong><br>
+<a class="source" href="https://www.ros.org" target="_blank">
+ros.org
+</a>
+</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>Етика ШІ</h2>
+<ul>
+<li>
+<strong>UNESCO — Ethics of AI</strong><br>
+<a class="source" href="https://www.unesco.org/en/artificial-intelligence/ethics" target="_blank">
+unesco.org
+</a>
+</li>
+<li>
+<strong>European Commission</strong><br>
+<a class="source" href="https://digital-strategy.ec.europa.eu" target="_blank">
+digital-strategy.ec.europa.eu
+</a>
+</li>
+<li>
+<strong>IEEE — Ethically Aligned Design</strong><br>
+<a class="source" href="https://ethicsinaction.ieee.org" target="_blank">
+ethicsinaction.ieee.org
+</a>
+</li>
+</ul>
+</section>
+
+<a class="btn-back" href="index.html">← Назад</a>
+
+<footer>
+<div>© 2025 Джерела ШІ</div>
+<div>CRT / 8-bit</div>
+</footer>
+
+</div>
+
+<script>
+function spawnStars(count = 120) {
+const c = document.getElementById("stars");
+for (let i = 0; i < count; i++) {
+const s = document.createElement("div");
+s.className = "star";
+s.style.left = Math.random() * 100 + "%";
+s.style.top = Math.random() * 100 + "%";
+s.style.animationDuration = 8 + Math.random() * 10 + "s";
+c.appendChild(s);
+}
+}
+spawnStars();
+</script>
+
+</body>
+</html>
