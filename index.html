@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
 <meta charset="utf-8" />
@@ -25,10 +25,10 @@ overflow-x:hidden;
 #bg-tunnel {
 position: fixed;
 inset: 0;
-background: url("https://jsac.jpcert.or.jp/archive/2024/images/screen.png") center/cover no-repeat;
+background: url("https://images.steamusercontent.com/ugc/991262566628548285/2A23B0BB92EC12348B1180161261CB2DD10AEFED/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false") center/cover no-repeat;
 z-index: -3;
 opacity: 0.8;
-filter: saturate(1.2) hue-rotate(310deg);
+filter: saturate(1) hue-rotate(170deg) brightness(0.49);
 }
 @keyframes moveBG {
 from { background-position: 0 0; }
@@ -43,16 +43,30 @@ overflow:hidden;
 }
 .star {
 position: absolute;
+left: 100%;
+top: 100%;
 width: 4px;
 height: 4px;
 background: white;
 border-radius: 50%;
-opacity: 0.8;
-animation: floatStar linear infinite;
+opacity: 0;
+transform: translate(-50%, -50%) scale(0.2);
+will-change: transform, opacity;
+animation: starFly linear infinite;
 }
-@keyframes floatStar {
-from { transform: translateY(0) translateX(0); }
-to { transform: translateY(-200px) translateX(80px); }
+
+@keyframes starFly {
+	0% {
+		transform: translate(-50%, -50%) scale(0.2);
+		opacity: 0.15;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(var(--scale, 1.8));
+		opacity: 1;
+	}
 }
 .wrap {
 max-width: var(--max-width);
@@ -236,6 +250,143 @@ allowfullscreen>
 </div>
 </section>
 <section id="ethics">
+	<section id="history-big">
+<h2>Історія розвитку штучного інтелекту в робототехніці</h2>
+
+<img src="https://mindscope.biz.ua/wp-content/uploads/2024/11/6db986fa-b978-4912-8f1e-31e23268334a_result.jpg" width="100%" style="border:3px solid #2aff7c; margin:12px 0">
+
+<p>
+Розвиток робототехніки тісно пов’язаний з еволюцією штучного інтелекту. Перші роботи з’явилися у середині XX століття і виконували лише прості механічні дії без аналізу середовища.
+</p>
+
+<div class="more-content">
+<p>
+У 1960–1970-х роках роботи використовувалися переважно у промисловості, зокрема на автомобільних заводах. Вони працювали за заздалегідь заданими програмами і не могли реагувати на зміни середовища. З розвитком обчислювальної техніки з’явилися перші алгоритми машинного зору та адаптивного керування.
+</p>
+
+<p>
+У XXI столітті відбувся справжній прорив завдяки глибокому навчанню, нейронним мережам та великим обсягам даних. Сучасні роботи здатні навчатися на досвіді, аналізувати складні сцени та взаємодіяти з людьми у реальному часі.
+</p>
+</div>
+
+<a class="more-btn" onclick="toggleMore(this)">Більше</a>
+</section>
+
+<section id="ai-architecture">
+<h2>Архітектура роботів зі штучним інтелектом</h2>
+
+<img src="https://ai360.com.ua/wp-content/uploads/2024/10/EC_Artificial_Intelligence_750-1.jpg"
+width="100%" style="border:3px solid #2aff7c; margin:12px 0">
+
+<p>
+Типова архітектура інтелектуального робота складається з декількох ключових компонентів.
+</p>
+
+<ul>
+<li><strong>Сенсори</strong> — камери, LiDAR, ультразвукові датчики</li>
+<li><strong>Обробка даних</strong> — нейронні мережі та алгоритми аналізу</li>
+<li><strong>Модуль прийняття рішень</strong></li>
+<li><strong>Виконавчі механізми</strong></li>
+</ul>
+
+<div class="more-content">
+<p>
+Сенсорні дані аналізуються за допомогою алгоритмів машинного навчання. На основі отриманої інформації система формує модель навколишнього середовища та обирає оптимальну стратегію дій. Така архітектура дозволяє роботам працювати автономно та безпечно.
+</p>
+</div>
+
+<a class="more-btn" onclick="toggleMore(this)">Більше</a>
+</section>
+
+<section id="use-cases">
+<h2>Сфери застосування ШІ в робототехніці</h2>
+
+<img src="https://pingvin.pro/wp-content/uploads/2023/06/shtuchnyj-intelekt-i-jogo-vplyv-na-lyudej.webp"
+width="100%" style="border:3px solid #2aff7c; margin:12px 0">
+
+<p>
+Сьогодні інтелектуальні роботи використовуються у багатьох сферах діяльності людини.
+</p>
+
+<div class="more-content">
+<ul>
+<li><strong>Медицина</strong> — роботизовані хірургічні системи</li>
+<li><strong>Промисловість</strong> — автоматизовані виробничі лінії</li>
+<li><strong>Сільське господарство</strong> — автономні трактори та дрони</li>
+<li><strong>Логістика</strong> — склади та сортувальні системи</li>
+<li><strong>Космічні дослідження</strong> — марсоходи та супутники</li>
+</ul>
+
+<p>
+Використання ШІ дозволяє підвищити ефективність, зменшити витрати та забезпечити безпеку в небезпечних умовах.
+</p>
+</div>
+
+<a class="more-btn" onclick="toggleMore(this)">Більше</a>
+</section>
+
+<section id="pros-cons-big">
+<h2>Переваги та недоліки використання ШІ</h2>
+
+<p><strong>Переваги:</strong></p>
+<ul>
+<li>Висока точність виконання операцій</li>
+<li>Безперервна робота без втоми</li>
+<li>Зменшення людського фактору</li>
+</ul>
+
+<div class="more-content">
+<p><strong>Недоліки:</strong></p>
+<ul>
+<li>Висока вартість розробки</li>
+<li>Складність програмування</li>
+<li>Питання відповідальності за рішення ШІ</li>
+</ul>
+
+<p>
+Незважаючи на недоліки, переваги значно переважають, що робить ШІ ключовою технологією майбутнього.
+</p>
+</div>
+
+<a class="more-btn" onclick="toggleMore(this)">Більше</a>
+</section>
+
+<section id="future-big">
+<h2>Перспективи розвитку робототехніки</h2>
+
+<img src="https://julienflorkin.com/wp-content/uploads/2023/08/robotics-16.webp"
+width="100%" style="border:3px solid #2aff7c; margin:12px 0">
+
+<p>
+Майбутнє робототехніки з ШІ пов’язане з розвитком автономних і колаборативних систем.
+</p>
+
+<div class="more-content">
+<p>
+Очікується поява роботів, які зможуть працювати поруч із людьми без загрози безпеці, навчатися в реальному часі та виконувати складні соціальні функції. Такі технології змінять підхід до виробництва, медицини та побуту.
+</p>
+</div>
+
+<a class="more-btn" onclick="toggleMore(this)">Більше</a>
+</section>
+
+<section id="final-conclusion">
+<h2>Загальний висновок</h2>
+
+<p>
+Штучний інтелект відіграє ключову роль у розвитку сучасної робототехніки.
+</p>
+
+<div class="more-content">
+<p>
+Поєднання алгоритмів машинного навчання, сенсорних систем та автономного керування дозволяє створювати інтелектуальні системи, які здатні змінити майбутнє людства. Важливо забезпечити етичне та відповідальне використання цих технологій.
+</p>
+</div>
+
+<a class="more-btn" onclick="toggleMore(this)">Більше</a>
+</section>
+<section id="safety-big"></section>
+<section id="safety-big">
 <h2>Безпека</h2>
 <p>При використанні ШІ у робототехніці важливо дотримуватися принципів безпеки для людей.</p>
 <div class="more-content">
@@ -249,7 +400,7 @@ allowfullscreen>
 <aside>
 <div class="card">
 <h4>Швидкі посилання</h4>
-<p><a class="tag" href="sources.html">INFO</a> Джерела</p>
+<p><span class="tag" onclick="window.location.href='#'">INFO</span> Джерела</p>
 </div>
 
 <div class="card">
@@ -267,24 +418,50 @@ allowfullscreen>
 
 <script>
 function spawnStars(count = 200) {
-const container = document.getElementById("stars");
+	const container = document.getElementById("stars");
+	container.innerHTML = '';
+	const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+	const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
-for (let i = 0; i < count; i++) {
-const s = document.createElement("div");
-s.classList.add("star");
-const size = Math.random() * 4 + 2;
-s.style.width = size + "px";
-s.style.height = size + "px";
-s.style.left = Math.random() * 100 + "%";
-s.style.top = Math.random() * 100 + "%";
-const duration = Math.random() * 15 + 10;
-s.style.animationDuration = duration + "s";
-const delay = Math.random() * -duration;
-s.style.animationDelay = delay + "s";
-container.appendChild(s);
+	for (let i = 0; i < count; i++) {
+		const s = document.createElement("div");
+		s.classList.add("star");
+
+		const size = Math.random() * 3 + 1;
+		s.style.width = size + "px";
+		s.style.height = size + "px";
+
+		// emit from center, fly outward toward viewer (scale up + translate outward)
+		const angle = Math.random() * Math.PI * 2;
+		const maxDist = Math.max(vw, vh) * (0.9 + Math.random() * 1.4);
+		const distance = 200 + Math.random() * maxDist;
+		const dx = Math.cos(angle) * distance;
+		const dy = Math.sin(angle) * distance;
+		const scale = 0.7 + Math.random() * 2.2;
+
+		s.style.left = '50%';
+		s.style.top = '50%';
+		s.style.setProperty('--dx', dx + 'px');
+		s.style.setProperty('--dy', dy + 'px');
+		s.style.setProperty('--scale', scale);
+
+		const duration = 1.6 + Math.random() * 5; // faster, to feel flying in
+		s.style.animationDuration = duration + 's';
+		const delay = Math.random() * -duration;
+		s.style.animationDelay = delay + 's';
+
+		container.appendChild(s);
+	}
 }
-}
+
 spawnStars();
+
+// respawn on resize to keep distances reasonable
+let _resizeTimer;
+window.addEventListener('resize', () => {
+	clearTimeout(_resizeTimer);
+	_resizeTimer = setTimeout(() => spawnStars(), 250);
+});
 
 function toggleMore(btn) {
 const more = btn.previousElementSibling;
